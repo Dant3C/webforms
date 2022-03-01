@@ -44,7 +44,26 @@
         </ul>
       </div>  
     </nav>
-    
+    <!--nav bar end-->
+    <!--forms-->
+    <form action="/answer">
+        <label for "text1">Tip Calculator</label><br>
+        <input type="text" id="text1" name="text1"><br>
+        <input type="radio" id="q1" name="rad1" value="answer one">
+        <label for="q1">15%</label><br>
+        <input type="radio" id="q2" name="rad1" value="answer two">
+        <label for="q2">20%</label><br>
+        <input type="submit" value="Submit"><br>
+    </form>
+    <form>
+        <input type="checkbox" id="foodtype1" name="foodtype1" value="mexican">
+        <label for="foodtype1"> Mexican food</label><br>
+        <input type="checkbox" id="foodtype2" name="foodtype2" value="asian">
+        <label for="foodtype2"> asian food</label><br>
+        <input type="checkbox" id="foodtype3" name="foodtype3" value="seafood">
+        <label for="foodtype3"> seafood</label><br><br>
+        
+    </form>
     <!--page content-->
     {% block content %}{% endblock %}
     
