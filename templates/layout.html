@@ -47,15 +47,15 @@
     <!--nav bar end-->
     <!--forms-->
     <form action="/answer">
-        <label for "text1">Tip Calculator</label><br>
-        <input type="text" id="text1" name="text1"><br>
-        <input type="radio" id="q1" name="rad1" value="answer one">
-        <label for="q1">15%</label><br>
-        <input type="radio" id="q2" name="rad1" value="answer two">
-        <label for="q2">20%</label><br>
+        <label for "text1">Tip Calculator: ps last two numbers are decimalpoints</label><br>
+        <input type="number" id="text1" name="text1" min="0.0"><br>
+        <input type="radio" id="rad1" name="rad1" value="radio1">
+        <label for="rad1">15%</label><br>
+        <input type="radio" id="rad2" name="rad1" value="1.20">
+        <label for="rad2">20%</label><br>
         <input type="submit" value="Submit"><br>
     </form>
-    <form>
+    <form action="/p1">
         <input type="checkbox" id="foodtype1" name="foodtype1" value="mexican">
         <label for="foodtype1"> Mexican food</label><br>
         <input type="checkbox" id="foodtype2" name="foodtype2" value="asian">
