@@ -23,7 +23,15 @@ def render_main():
 
 @app.route("/p1")
 def render_page1():
-    return render_template('page1.html')
+    food1 = request.args['foodtype1']
+    food2 = request.args['foodtype2']
+    food3 = request.args['foodtype3']
+    r_list = []
+    if food1 == mexican:
+        r_list.append("mexican restarant")
+    
+    
+    return render_template('page1.html', restarant = r_list)
 
 @app.route("/p2")
 def render_page2():
