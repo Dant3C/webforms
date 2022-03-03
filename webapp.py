@@ -23,15 +23,31 @@ def render_main():
 
 @app.route("/p1")
 def render_page1():
-    food1 = request.args['foodtype1']
-    food2 = request.args['foodtype2']
-    food3 = request.args['foodtype3']
+    # fast = request.args['fast_food']
+    food_type = []
+    food_type.append(request.args['foodtype1'])
+    # food_type.append(request.args['foodtype2'])
+    # food_type.append(request.args['foodtype3'])
+    print (food_type)
+    r_string = ""
     r_list = []
-    if food1 == mexican:
-        r_list.append("mexican restarant")
-    
-    
-    return render_template('page1.html', restarant = r_list)
+    # if fast == "yes":
+        # if food1 == "mexican":
+            # r_list.append
+    for x in range(0, len(food_type)):
+        if food_type[x] == "mexican":
+            r_list.append("mexican restaurants 1")
+            r_list.append("mexican restaurants 2")
+            r_list.append("mexican restaurants 3")
+            print (r_list)
+        # if food_type[x] == "burger":
+            # r_list.append("burger 1")
+        # if food_type[x] == "seafood":
+            # r_list.append("ocean food 1")
+    for x in r_list:
+        r_string = r_string + x + ", "
+    print (r_string)
+    return render_template('page1.html', restaurants = r_string)
 
 @app.route("/p2")
 def render_page2():

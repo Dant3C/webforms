@@ -35,12 +35,7 @@
           <li {% if active_page == "home" %} class="nav-item active"{% else %}class="nav-item"{% endif %}>
             <a class="nav-link" href="/">Home</a>
           </li>
-          <li {% if active_page == "page1" %} class="nav-item active"{% else %}class="nav-item"{% endif %}>
-            <a class="nav-link" href="/p1">Page 1</a>
-          </li>
-          <li {% if active_page == "page2" %} class="nav-item active"{% else %}class="nav-item"{% endif %}>
-            <a class="nav-link" href="/p2">Page 2</a>
-          </li>    
+
         </ul>
       </div>  
     </nav>
@@ -56,13 +51,16 @@
         <input type="submit" value="Submit"><br>
     </form>
     <form action="/p1">
+        <input type="radio" id="fast_food" name="fast_food" value="yes">
+    
         <input type="checkbox" id="foodtype1" name="foodtype1" value="mexican">
         <label for="foodtype1"> Mexican food</label><br>
-        <input type="checkbox" id="foodtype2" name="foodtype2" value="asian">
-        <label for="foodtype2"> asian food</label><br>
+        <input type="checkbox" id="foodtype2" name="foodtype2" value="burger">
+        <label for="foodtype2"> Burger</label><br>
         <input type="checkbox" id="foodtype3" name="foodtype3" value="seafood">
         <label for="foodtype3"> seafood</label><br><br>
-        
+        <input type="submit" value="Submit"><br>
+
     </form>
     <!--page content-->
     {% block content %}{% endblock %}
