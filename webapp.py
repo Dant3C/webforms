@@ -26,8 +26,8 @@ def render_page1():
     # fast = request.args['fast_food']
     food_type = []
     food_type.append(request.args['foodtype1'])
-    # food_type.append(request.args['foodtype2'])
-    # food_type.append(request.args['foodtype3'])
+    food_type.append(request.args['foodtype2'])
+    food_type.append(request.args['foodtype3'])
     print (food_type)
     r_string = ""
     r_list = []
@@ -40,10 +40,28 @@ def render_page1():
             r_list.append("mexican restaurants 2")
             r_list.append("mexican restaurants 3")
             print (r_list)
-        # if food_type[x] == "burger":
-            # r_list.append("burger 1")
-        # if food_type[x] == "seafood":
-            # r_list.append("ocean food 1")
+            if food_type[x] == "burger":
+                r_list.append("burger 1")
+                if food_type[x] == "seafood":
+                    r_list.append("ocean food 1")
+                else:
+                    pass
+            else:
+                if food_type[x] == "seafood":
+                    r_list.append("ocean food 1")
+                else:
+                    pass
+        else:
+            if food_type[x] == "burger":
+                r_list.append("burger 1")
+                if food_type[x] == "seafood":
+                    r_list.append("ocean food 1")
+            else:
+                if food_type[x] == "seafood":
+                    r_list.append("ocean food 1")
+                else:
+                    r_list.append("nothing, i cant give you a recommendation if you don't give me information")
+            
     for x in r_list:
         r_string = r_string + x + ", "
     print (r_string)
@@ -54,4 +72,4 @@ def render_page2():
     return render_template('page2.html')
     
 if __name__=="__main__":
-    app.run(debug=False)
+    app.run(debug=True)
