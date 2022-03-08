@@ -37,8 +37,8 @@ def render_page1():
     for x in range(0, len(food_type)):
         if food_type[x] == "mexican":
             r_list.append("mexican restaurants 1")
-            r_list.append("mexican restaurants 2")
-            r_list.append("mexican restaurants 3")
+            # r_list.append("mexican restaurants 2")
+            # r_list.append("mexican restaurants 3")
             print (r_list)
             if food_type[x] == "burger":
                 r_list.append("burger 1")
