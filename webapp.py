@@ -23,20 +23,38 @@ def render_main():
 
 @app.route("/p1")
 def render_page1():
-    # fast = request.args['fast_food']
     food_type = []
-    food_type.append(request.args['foodtype1'])
-    food_type.append(request.args['foodtype2'])
-    food_type.append(request.args['foodtype3'])
-    print (food_type)
     r_string = ""
     r_list = []
-    # if fast == "yes":
-        # if food1 == "mexican":
-            # r_list.append
+    all_rest_list = []
+    try:
+        fast = request.args['fast_food']
+        if fast == "yes":
+            all_rest_list.insert(0,"lilys tacos")
+        else:
+            all_rest_list.insert(0,"los agaves")
+        
+    except:
+        print("gdh")
+    try:
+        food_type.append(request.args['foodtype1'])
+    except:
+        print(food_type)
+    try: 
+        food_type.append(request.args['foodtype2'])
+    except:
+        print(food_type)
+    try: 
+        food_type.append(request.args['foodtype3'])
+    except:
+        print(food_type)
+
+    print (food_type)
+    
+    
     for x in range(0, len(food_type)):
         if food_type[x] == "mexican":
-            r_list.append("mexican restaurants 1")
+            r_list.append(all_rest_list[0])
             # r_list.append("mexican restaurants 2")
             # r_list.append("mexican restaurants 3")
             print (r_list)
