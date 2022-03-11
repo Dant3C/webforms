@@ -10,10 +10,12 @@ def render_answer():
     if real_val == "radio1":
         plus_tip = bill * 1.15
         tip_prsnt = "15%"
-    else:
+    elif real_val == "radio2":
         plus_tip = bill * 1.20
         tip_prsnt = "20%"
-
+    else: 
+        plus_tip = bill * 1.25
+        tip_prsnt = "25%"
     ans1 =  str(bill) + " x " + tip_prsnt + " = " + str(plus_tip)
     return render_template('answer.html', answer1 = ans1)
     
@@ -30,9 +32,9 @@ def render_page1():
     try:
         fast = request.args['fast_food']
         if fast == "yes":
-            all_rest_list.insert(0,"lilys tacos")
+            all_rest_list = ["lilys tacos", "taco2", "burro", "not mex food"]
         else:
-            all_rest_list.insert(0,"los agaves")
+            all_rest_list = ["los agaves", "", "", "", ""]
         
     except:
         print("gdh")
@@ -51,7 +53,7 @@ def render_page1():
 
     print (food_type)
     
-    
+    # 0-2 is mexican // 3-5 is buger // 6-10 is other 
     for x in range(0, len(food_type)):
         if food_type[x] == "mexican":
             r_list.append(all_rest_list[0])
