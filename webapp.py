@@ -32,9 +32,11 @@ def render_page1():
     try:
         fast = request.args['fast_food']
         if fast == "yes":
-            all_rest_list = ["lilys tacos", "taco2", "burro", "not mex food"]
+            all_rest_list = ["lilys tacos", "taco2", "burro", "in n out", "habit", "kyle's kitchen", "california pasta" ]
+        elif fast == "no":
+            all_rest_list = ["los agaves", "", "", "eurika", ""]
         else:
-            all_rest_list = ["los agaves", "", "", "", ""]
+            all_rest_list = ["nothing","nothing","nothing","nothing","nothing","nothing"]
         
     except:
         print("gdh")
@@ -57,28 +59,32 @@ def render_page1():
     for x in range(0, len(food_type)):
         if food_type[x] == "mexican":
             r_list.append(all_rest_list[0])
-            # r_list.append("mexican restaurants 2")
-            # r_list.append("mexican restaurants 3")
+            r_list.append(all_rest_list[1])
+            r_list.append(all_rest_list[2])
             print (r_list)
             if food_type[x] == "burger":
-                r_list.append("burger 1")
+                r_list.append(all_rest_list[3])#buger
+                r_list.append(all_rest_list[4])#buger
+                r_list.append(all_rest_list[5])#buger
                 if food_type[x] == "seafood":
-                    r_list.append("ocean food 1")
+                    r_list.append(all_rest_list[6]) ## diffrent foods
                 else:
                     pass
             else:
                 if food_type[x] == "seafood":
-                    r_list.append("ocean food 1")
+                    r_list.append(all_rest_list[6]) ## other foes
                 else:
                     pass
         else:
             if food_type[x] == "burger":
-                r_list.append("burger 1")
+                r_list.append(all_rest_list[3])#buger
+                r_list.append(all_rest_list[4])#buger
+                r_list.append(all_rest_list[5])#buger
                 if food_type[x] == "seafood":
-                    r_list.append("ocean food 1")
+                    r_list.append(all_rest_list[6]) ## foods
             else:
                 if food_type[x] == "seafood":
-                    r_list.append("ocean food 1")
+                    r_list.append(all_rest_list[6]) #other foes
                 else:
                     r_list.append("nothing, i cant give you a recommendation if you don't give me information")
             
@@ -92,4 +98,4 @@ def render_page2():
     return render_template('page2.html')
     
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(debug=False)
