@@ -35,9 +35,9 @@ def render_page1():
     try:
         fast = request.args['fast_food']
         if fast == "yes":
-            all_rest_list = ["lilys tacos", "taco2", "burro", "in n out", "habit", "kyle's kitchen", "california pasta" ]
+            all_rest_list = ["lilys tacos", "taqueria el buen gusto", "la Super-Rica", "in n out", "habit", "kyle's kitchen", "california pasta" ]
         elif fast == "no":
-            all_rest_list = ["los agaves", "taco2", "burro", "eurika", "kyles kitchen", "buger3", "other1"]
+            all_rest_list = ["los agaves", "flor de maiz", "los Arroyos", "eurika", "kyles kitchen", "Mesa Burger", "The Shop"]
         else:
             all_rest_list = ["nothing","nothing","nothing","nothing","nothing","nothing"]
         
