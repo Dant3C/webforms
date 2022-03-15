@@ -16,8 +16,11 @@ def render_answer():
     else: 
         plus_tip = bill * 1.25
         tip_prsnt = "25%"
-    ans1 =  str(bill) + " x " + tip_prsnt + " = " + str(plus_tip)
-    return render_template('answer.html', answer1 = ans1)
+    
+    tip = plus_tip - bill
+    ans1 = "Total: " + str(bill) + " x " + tip_prsnt + " = " + str(plus_tip)
+    ans2 = "tip: " + str(tip)
+    return render_template('answer.html', answer1 = ans1, answer2 = ans2)
     
 @app.route("/")
 def render_main():
@@ -34,7 +37,7 @@ def render_page1():
         if fast == "yes":
             all_rest_list = ["lilys tacos", "taco2", "burro", "in n out", "habit", "kyle's kitchen", "california pasta" ]
         elif fast == "no":
-            all_rest_list = ["los agaves", "", "", "eurika", ""]
+            all_rest_list = ["los agaves", "taco2", "burro", "eurika", "kyles kitchen", "buger3", "other1"]
         else:
             all_rest_list = ["nothing","nothing","nothing","nothing","nothing","nothing"]
         
@@ -98,4 +101,4 @@ def render_page2():
     return render_template('page2.html')
     
 if __name__=="__main__":
-    app.run(debug=False)
+    app.run(debug=True)
