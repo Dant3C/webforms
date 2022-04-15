@@ -1,7 +1,7 @@
 from flask import Flask, url_for, render_template, request
 
 app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  Otherwise, it is the name of the file (ex. webapp)
-@app.route("/answer")
+@app.route("/answer", methods=['GET', 'POST'])
 def render_answer():
     bill = (float(request.args['text1']))/100
     real_val = request.args['rad1']
