@@ -22,11 +22,11 @@ def render_answer():
     ans2 = "tip: " + str(tip)
     return render_template('answer.html', answer1 = ans1, answer2 = ans2)
     
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def render_main():
     return render_template('home.html')
 
-@app.route("/p1")
+@app.route("/p1", methods=['GET', 'POST'])
 def render_page1():
     food_type = []
     r_string = ""
